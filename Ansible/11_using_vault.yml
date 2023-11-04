@@ -1,0 +1,30 @@
+---
+
+- name: configuring ios devices using ios_config module
+  gather_facts: no
+  hosts: routers
+  connection: network_cli
+
+  vars:
+    ansible_user: bigg
+    ansible_ssh_pass: "{{ routers_password }}"
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_pass: "{{ routers_enable_password }}"
+    ansible_network_os: ios
+
+  tasks:
+    - name: Basic Configuration
+      ios_config:
+        save_when: modified
+        lines:
+          - hostname "{{inventory_hostname}}_ansible"
+          - ip name-server 8.8.8.8
+          - ip domain name vault.com
+      register: output
+
+    - name: Printing at the console
+      debug: var=output
+
+
+# ansible-playbook -i ./hosts 11_using_vault.yml --ask-vault-pass -e@./11_vault.yml

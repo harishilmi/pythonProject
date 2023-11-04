@@ -1,0 +1,60 @@
+router1 | CHANGED | rc=0 >>
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.4(2)T4, DEVELOPMENT TEST SOFTWARE
+Shared connection to router1 closed.
+
+router3 | CHANGED | rc=0 >>
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.4(2)T4, DEVELOPMENT TEST SOFTWARE
+Shared connection to router3 closed.
+
+router2 | CHANGED | rc=0 >>
+Cisco IOS Software, Linux Software (I86BI_LINUX-ADVENTERPRISEK9-M), Version 15.4(2)T4, DEVELOPMENT TEST SOFTWARE
+Shared connection to router2 closed.
+
+switch1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host switch1 port 22: No route to host",
+    "unreachable": true
+}
+switch2 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host switch2 port 22: No route to host",
+    "unreachable": true
+}
+switch3 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host switch3 port 22: No route to host",
+    "unreachable": true
+}
+arista1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host arista1 port 22: No route to host",
+    "unreachable": true
+}
+arista2 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host arista2 port 22: No route to host",
+    "unreachable": true
+}
+iosxe | CHANGED | rc=0 >>
+
+=============================
+THIS IS MY GODDAMNED BANNER!
+=============================
+
+Cisco IOS XE Software, Version 17.03.02
+Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.2, RELEASE SOFTWARE (fc3)
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+Shared connection to iosxe closed.
+
+nxos | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host nxos port 22: No route to host",
+    "unreachable": true
+}
+arista3 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host arista3 port 22: No route to host",
+    "unreachable": true
+}

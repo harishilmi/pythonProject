@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:412d5a4d-0dff-432c-ab50-bb713a1a03cb">
+  <data>
+    <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+      <interface>
+        <GigabitEthernet>
+          <name>1</name>
+          <ip>
+            <address>
+              <primary>
+                <address>192.168.0.161</address>
+                <mask>255.255.255.0</mask>
+              </primary>
+            </address>
+          </ip>
+          <logging>
+            <event>
+              <link-status/>
+            </event>
+          </logging>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+        <GigabitEthernet>
+          <name>2</name>
+          <ip>
+            <address>
+              <primary>
+                <address>22.2.2.2</address>
+                <mask>255.255.255.0</mask>
+              </primary>
+            </address>
+          </ip>
+          <logging>
+            <event>
+              <link-status/>
+            </event>
+          </logging>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+        <GigabitEthernet>
+          <name>3</name>
+          <logging>
+            <event>
+              <link-status/>
+            </event>
+          </logging>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+        <GigabitEthernet>
+          <name>4</name>
+          <logging>
+            <event>
+              <link-status/>
+            </event>
+          </logging>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+      </interface>
+    </native>
+  </data>
+</rpc-reply>

@@ -1,0 +1,5 @@
+HOSTNAME:IP:USERNAME:PASSWORD:CONFIG_FILE
+coredevice1:10.0.0.1:bigg:password1:router1.txt
+coredevice2:10.0.0.2:big2:password2:router2.txt
+coredevice3:10.0.0.3:big3:password3:router3.txt
+coredevice4:10.0.0.4:big4:password4:router4.txt

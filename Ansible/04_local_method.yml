@@ -1,0 +1,22 @@
+---
+- name: Running show commands using old local method
+  hosts: router1
+  gather_facts: yes
+  connection: local
+
+  vars:
+    login:
+      username: bigg
+      password: bigg
+      auth_pass: bigg
+      authorize: true
+
+  tasks:
+    - name: Run privilleged commands
+      ios_command:
+        provider: "{{login}}"
+        commands:
+          - show run
+      register: print_output
+
+    - debug: var=print_output.stdout_lines

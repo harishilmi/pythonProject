@@ -1,0 +1,7 @@
+
+router1_ansible>terminal len 0
+router1_ansible>show running-config
+                      ^
+% Invalid input detected at '^' marker.
+
+router1_ansible>

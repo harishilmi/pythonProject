@@ -1,0 +1,20 @@
+---
+- name: Running show commands using ios_command module
+  hosts: routers
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: run multiple commands on Cisco routers
+      ios_command:
+        commands:
+          - show version
+          - show clock
+
+      register: my_config
+
+    - name: save output to a file on disk
+      copy:
+        content: "{{ my_config.stdout[0] }}"
+        dest: "{{ inventory_hostname }}_bigg.txt"
+

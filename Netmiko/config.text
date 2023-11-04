@@ -1,0 +1,4 @@
+interface loopback123
+ip address 123.123.123.123 255.255.255.255
+interface loopback124
+ip address 124.124.124.124 255.255.255.255

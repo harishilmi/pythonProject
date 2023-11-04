@@ -1,0 +1,160 @@
+Building configuration...
+
+Current configuration : 1947 bytes
+!
+! Last configuration change at 02:47:43 UTC Wed Nov 1 2023 by bigg
+!
+version 15.4
+service config
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname router1_ansible
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password bigg
+!
+no aaa new-model
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip domain name bigogigo.com
+ip name-server 8.8.8.8
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+archive
+ path unix:
+username bigg password 0 bigg
+username netmiko password 0 cisco
+!
+redundancy
+!
+!
+ip ssh version 2
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface Loopback1
+ no ip address
+!
+interface Loopback100
+ no ip address
+!
+interface Loopback123
+ ip address 123.123.123.123 255.255.255.255
+!
+interface Loopback124
+ ip address 124.124.124.124 255.255.255.255
+!
+interface Loopback200
+ no ip address
+!
+interface Loopback1000
+ no ip address
+!
+interface Ethernet0/0
+ ip address 192.168.0.121 255.255.255.0
+!
+interface Ethernet0/1
+ no ip address
+ shutdown
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+!
+router eigrp 10
+ network 0.0.0.0
+!
+router ospf 1
+ network 12.0.0.1 0.0.0.0 area 0
+ network 0.0.0.0 255.255.255.255 area 0
+ default-information originate
+ distance 23
+ bfd all-interfaces
+!
+router bgp 10
+ bgp log-neighbor-changes
+ neighbor 192.168.0.122 remote-as 10
+ neighbor 192.168.0.123 remote-as 10
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 192.168.0.1
+ip route 1.1.1.1 255.255.255.255 12.0.0.1
+!
+!
+!
+access-list 1 permit any
+access-list 111 permit ip host 192.168.0.111 any
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login local
+ transport input all
+!
+!
+end

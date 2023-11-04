@@ -1,0 +1,27 @@
+---
+
+- name: configuring ios devices using ios_config module
+  gather_facts: no
+  hosts: routers
+  connection: network_cli
+
+  vars:
+    ansible_user: bigg
+    ansible_ssh_pass: bigg
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_pass: bigg
+    ansible_network_os: ios
+
+  tasks:
+    - name: Basic Configuration
+      ios_config:
+        save_when: modified
+        lines:
+          - hostname "{{inventory_hostname}}_ansible"
+          - ip name-server 8.8.8.8
+          - ip domain name bigogigo.com
+      register: output
+
+    - name: Printing at the console
+      debug: var=output

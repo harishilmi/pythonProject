@@ -1,0 +1,19 @@
+---
+
+- name: configuring ios devices using ios_config module
+  gather_facts: no
+  hosts: routers
+  connection: network_cli
+
+  vars:
+    ansible_user: bigg
+    ansible_ssh_pass: bigg
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_pass: bigg
+    ansible_network_os: ios
+
+  tasks:
+    - name: Backup running config
+      ios_config:
+        backup: yes

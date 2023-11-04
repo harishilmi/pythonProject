@@ -1,0 +1,15 @@
+---
+# failed. try again later
+
+- name: configure vrfs and remove any other vrf configured
+  hosts: router1
+#  gather_facts: no
+
+  tasks:
+    - name: configure vrfs and purge all others
+      ios_vrf:
+        vrfs:
+          - red
+          - green
+          - blue
+        purge: yes

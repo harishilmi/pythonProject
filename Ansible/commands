@@ -1,0 +1,1 @@
+ansible -i ./hosts routers -m raw -a show version | inc Version -u bigg -k

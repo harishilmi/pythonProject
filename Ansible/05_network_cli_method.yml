@@ -1,0 +1,22 @@
+---
+- name: Running show commands using new network_cli methid
+  hosts: router1
+  gather_facts: yes
+  connection: network_cli
+  become: yes
+  become_method: enable
+
+  vars:
+    ansible_user: bigg
+    ansible_ssh_pass: bigg
+    ansible_become_pass: bigg
+    ansible_network_os: ios
+
+  tasks:
+    - name: Run privilleged commands
+      ios_command:
+        commands:
+          - show run
+      register: print_output
+
+    - debug: var=print_output.stdout_lines

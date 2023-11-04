@@ -1,0 +1,78 @@
+2023-11-02 10:29:43,317 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces']} on 3 hosts
+2023-11-02 10:29:43,318 - nornir.core.task -    DEBUG -      start() - Host 'rtr1': running task 'napalm_get'
+2023-11-02 10:29:43,320 - nornir.core.task -    DEBUG -      start() - Host 'rtr2': running task 'napalm_get'
+2023-11-02 10:29:43,321 - nornir.core.task -    DEBUG -      start() - Host 'rtr3': running task 'napalm_get'
+2023-11-02 10:29:54,029 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/napalm/base/base.py", line 129, in _netmiko_open
+    self._netmiko_device.enable()
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 26, in enable
+    return super().enable(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2008, in enable
+    output += self.read_until_prompt()
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 812, in read_until_prompt
+    return self.read_until_pattern(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 721, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'router2_ansible' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-11-02 10:29:54,030 - nornir.core.task -    ERROR -      start() - Host 'rtr3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/napalm/base/base.py", line 129, in _netmiko_open
+    self._netmiko_device.enable()
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 26, in enable
+    return super().enable(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 2008, in enable
+    output += self.read_until_prompt()
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 812, in read_until_prompt
+    return self.read_until_pattern(
+  File "/home/haris/PycharmProjects/pythonProject/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 721, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'router3_ansible' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+

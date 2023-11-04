@@ -1,0 +1,10 @@
+---
+- name: configure vrfs and remove any other vrf configured
+  hosts: nxos
+#  gather_facts: no
+
+  tasks:
+  - name: Ensure ospf is enabled
+    nxos_feature:
+      feature: ospf
+      state: enabled

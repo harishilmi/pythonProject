@@ -1,0 +1,20 @@
+[
+    {
+        "age": -1.0,
+        "interface": "Ethernet1/1",
+        "ip": "192.168.0.1",
+        "mac": "04:BA:D6:C7:2A:03"
+    },
+    {
+        "age": -1.0,
+        "interface": "Ethernet1/1",
+        "ip": "192.168.0.10",
+        "mac": "B4:0E:DE:2D:FE:06"
+    },
+    {
+        "age": -1.0,
+        "interface": "Ethernet1/1",
+        "ip": "192.168.0.111",
+        "mac": "00:0C:29:5B:31:52"
+    }
+]

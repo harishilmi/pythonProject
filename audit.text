@@ -1,0 +1,4 @@
+audit item for router 192.168.0.121 : username bigg password 0 bigg
+audit item for router 192.168.0.121 : username netmiko password 0 cisco
+audit item for router 192.168.0.122 : username bigg password 0 bigg
+audit item for router 192.168.0.123 : username bigg password 0 bigg

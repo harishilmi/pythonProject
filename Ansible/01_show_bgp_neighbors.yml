@@ -1,0 +1,14 @@
+---
+- name: Show BGP Neighbors
+  hosts: routers
+  gather_facts: false
+
+
+  tasks:
+    - name: BGP Neighbors
+      raw: "show ip bgp neighbors"
+      register: output
+    - name: Printing Output
+      debug: var=output.stdout_lines
+
+
